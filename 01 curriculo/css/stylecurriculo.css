@@ -1,8 +1,160 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a{
-    color: black;
+body {
+    background: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.container-nav {
+    background: #366dac;
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.container-nav header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container-nav nav {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.container-body aside,
+.container-body section {
+    display: none;
+}
+
+.container-nav .block {
+    margin-bottom: 2rem;
+}
+
+.container-nav h2 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 0.4rem;
+}
+
+.container-nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.container-nav ul li {
+    margin-bottom: 0.6rem;
+}
+
+.container-body-header {
+    color: #f8fbfc;
+    text-align: center;
+}
+
+.subdiv {
+    padding: 2rem;
+}
+
+.container-body section {
+    margin-bottom: 2rem;
+}
+
+.container-body section h2 {
+    font-size: 1.4rem;
+    color: #366dac;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #366dac;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.container-body article {
+    margin-bottom: 2rem;
+}
+
+.container-body article h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #366dac;
+}
+
+.experience-item h3 {
+    font-size: 1.1rem;
+    color: #366dac;
+}
+
+.experience-item span {
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.container-footer footer {
+    background: #366dac;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container-footer h2 {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.img-personal {
+    height: 250px;
+    width: 250px;
+}
+
+.container-body section {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.about h2,
+.experience h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #366dac;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.profile-header {
+    background-color: #133f72;
+    text-align: center;
+    padding-top: 1.85rem;
+    height: 150px;
+    width: 680px;
+}
+
+.aboutme {
+    text-align: justify;
 }

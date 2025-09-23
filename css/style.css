@@ -6,7 +6,7 @@
 
 .container-table {
     width: 100%;
-    max-width: 800px;
+    max-width: 1500px;
     margin: 0 auto;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -50,7 +50,7 @@
 }
 
 .practica-link:hover{
-    background-color: #3498db;
+    background-color: black;
     color: white;
     text-decoration: none;
 }
