@@ -51,3 +51,7 @@ nav, footer, section{
     font-size: 16px;
     text-decoration: none;
 }
+
+footer{
+    text-align: center;
+}
