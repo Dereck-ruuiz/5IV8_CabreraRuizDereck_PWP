@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejercicio 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para cálculo de inversiones Banco Cabrera con un incremento de 8.05% anual</label>
+                <br>
+                <div class="container-table">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                introduce la cantidad que deseas invertir por todo un año
+                            </td>
+                            <td>
+                                <input type="text" name="cantidad" id="cantidadi" onkeypress="return validarn(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Interes" name="enviar" onclick="interes()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Su saldo total con el interés es de:
+                            </td>
+                            <td>
+                                <input type="text" name="sueldoi" id="saldoi" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="button" value="Borrar datos" name="borrar" onclick="borrarc()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <footer><a href="../../05 Ejercicios/Ejercicios.html">regersar a la lista de los ejercicios</a></footer>
+        <script src="./javascript/funcionese1.js"></script>
+    </body>
+</html>

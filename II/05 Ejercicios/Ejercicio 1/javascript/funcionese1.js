@@ -1,0 +1,27 @@
+function validarn(e){
+    var teclado = (document.all)? e.keyCode : e.which;
+    if(teclado == 8) return true;
+    var patron = /[0-9\d .]/;
+
+    var codigo =  String.fromCharCode(teclado);
+    return patron.test(codigo);
+}
+
+//función para calcular el interés
+//DELIMITAR LA CANTIDAD DE DIGITOS EN EL RESULTADO
+function interes(){
+    var valor = document.getElementById("cantidadi").value;
+
+    var parseo = parseFloat(valor);
+
+    var interes = parseo*(0.0805);//LÍMITE A 2 DECIMALES
+    
+    var total  = interes + parseo;
+    
+    document.getElementById("saldoi").value = "$ " + total; //LÍMITE A 2 DECIMALES
+}
+
+function borrarc(){
+        document.getElementById("saldoi").value = "";
+        document.getElementById("cantidadi").value = "";
+}
