@@ -8,10 +8,84 @@
 </head>
 <body>
     
-
+    <div class="container">
+            <div class="container-form">
+                <form method="post" name="formulario" action="">
+                    <label for="">Formulario para cálculo de Sueldo mensual</label>
+                    <div class="container-table">
+                        <table class="table">
+                            <tr>
+                                <td class="td-text">
+                                    Introduce tu sueldo base
+                                </td>
+                                <td>
+                                    <input type="text" name="cantidad" id="sueldob" onkeypress="return validarn(event)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    Introduce el total de tu primera venta de este mes
+                                </td>
+                                <td>
+                                    <input type="text" name="cantidad" id="venta1" onkeypress="return validarn(event)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    Introduce el total de tu segunda venta este mes
+                                </td>
+                                <td>
+                                    <input type="text" name="cantidad" id="venta2" onkeypress="return validarn(event)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    Introduce el total de tu tercera venta este mes
+                                </td>
+                                <td>
+                                    <input type="text" name="cantidad" id="venta3" onkeypress="return validarn(event)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    calcular sueldo mensual
+                                </td>
+                                <td>
+                                    <input type="button" value="Calcular sueldo" name="calcular" onclick="calcularsueldo()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                     ㅤ
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                     ㅤ
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    Sus comisiones y su sueldo neto:
+                                </td>
+                                <td>
+                                    <textarea name="sueldo" id="sueldot" readonly="readonly" class="output"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="button" value="Borrar datos" name="borrar" onclick="borrarc()"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
     
     <div class="container-footer">
         <footer><a href="../../05 Ejercicios/Ejercicios.html">regersar a la lista de los ejercicios</a></footer>
     </div>
+    
+    <script src="./javascript/funcionese2.js"></script>
 </body>
 </html>

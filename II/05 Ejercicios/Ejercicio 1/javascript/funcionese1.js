@@ -16,7 +16,7 @@ function interes(){
     var parseo = parseFloat(valor);
     var parseo_meses =parseInt(meses);
 
-    if(isNaN(parseo) || parseo <= 0 || isNaN(parseo_meses) || parseo_meses <= 0){
+    if(parseo <= 0 || parseo_meses <= 0){
         alert("Por favor, introduce una cantidad válida a invertir y un número de meses mayor que cero y menor que 18.");
         document.getElementById("mesesi").value = "";
         document.getElementById("cantidadi").value = "";
