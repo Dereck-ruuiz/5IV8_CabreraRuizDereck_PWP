@@ -14,9 +14,9 @@ function interes(){
 
     var parseo = parseFloat(valor);
 
-    var interes = parseo*(0.0805);//LÍMITE A 2 DECIMALES
+    var interes = Math.round(parseo*(0.0805)*100)/100;//LÍMITE A 2 DECIMALES
     
-    var total  = interes + parseo;
+    var total  = Math.round((interes + parseo)*100)/100;
     
     document.getElementById("saldoi").value = "$ " + total; //LÍMITE A 2 DECIMALES
 }

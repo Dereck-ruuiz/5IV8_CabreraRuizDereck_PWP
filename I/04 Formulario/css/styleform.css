@@ -1,0 +1,51 @@
+.container-body{
+    background-color: blanchedalmond;
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px #00000080;
+    color: black;
+}
+
+ul,li{
+    list-style-type: none;
+}
+
+.container-form{
+    background-color: #2c3e50;
+    border-radius: 10px;
+    width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 2cqmax;
+    color: #fff;
+    box-shadow: 5px 5px 10px #00000080;
+}
+.btn_registro{
+    margin: 6px;
+}
+
+.container-footer{
+    box-shadow: 5px 5px 10px #00000080;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+}
+
+
+.container-footer a{
+    text-decoration: none;
+    color: white;
+}
+.container-footer a:hover{
+    background-color: aliceblue;
+    color: #000000;
+}   
