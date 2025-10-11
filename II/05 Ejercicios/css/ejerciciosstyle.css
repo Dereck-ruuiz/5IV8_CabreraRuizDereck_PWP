@@ -9,7 +9,7 @@
 .container-table {
     width: 100%;
     max-width: 1500px;
-    margin: 50px;
+    margin: 50px auto auto auto;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
