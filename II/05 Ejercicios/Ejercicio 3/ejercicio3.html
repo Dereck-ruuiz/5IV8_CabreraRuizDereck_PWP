@@ -3,12 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="./css/styleejercicio3.css">
 </head>
 <body>
     
-
+    <div class="container">
+        <div class="container-form">
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para cálculo de precio con descuento Tienda Cabrera</label>
+                <div class="container-table">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                 ㅤ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                introduce el producto
+                            </td>
+                            <td>
+                                <input type="text" name="product" id="producto">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                introduce el precio del producto
+                            </td>
+                            <td>
+                                <input type="text" name="cantidad" id="precioi" onkeypress="return validarn(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular descuento" name="enviar" onclick="calculard()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 ㅤ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 ㅤ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Información de la compra:
+                            </td>
+                            <td>
+                                <textarea type="text" name="precios" id="datos" readonly="readonly" class="output"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="button" value="Borrar datos" name="borrar" onclick="borrarc()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
     
-    <footer><a href="../../05 Ejercicios/Ejercicios.html">regersar a la lista de los ejercicios</a></footer>
+    <div class="container-footer">
+        <footer><a href="../../05 Ejercicios/Ejercicios.html">regersar a la lista de los ejercicios</a></footer>
+    </div>
+
+    <script src="./javascript/funcionese3.js"></script>
 </body>
 </html>

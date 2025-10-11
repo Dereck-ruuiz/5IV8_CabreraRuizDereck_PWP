@@ -16,14 +16,7 @@ function interes(){
     var parseo = parseFloat(valor);
     var parseo_meses =parseInt(meses);
 
-    if(parseo <= 0 || parseo_meses <= 0){
-        alert("Por favor, introduce una cantidad válida a invertir y un número de meses mayor que cero y menor que 18.");
-        document.getElementById("mesesi").value = "";
-        document.getElementById("cantidadi").value = "";
-        return;
-    }
-
-    if(parseo_meses > 18){
+    if(parseo_meses > 18 || isNaN(parseo_meses)){
         alert("El número de meses máximo para invertir es de dieciocho meses");
         document.getElementById("mesesi").value = "";
         return;

@@ -19,7 +19,7 @@ function calcularsueldo(){
     var parse_vent2 = parseFloat(vent2);
     var parse_vent3 = parseFloat(vent3);
 
-    if(isNaN(parse_sueldob) || parse_sueldob <= 0){
+    if(isNaN(parse_sueldob)){
         alert("Por favor, introduce un sueldo válido.");
         document.getElementById("sueldob").value = "";
         return;
@@ -27,14 +27,6 @@ function calcularsueldo(){
 
     if(isNaN(parse_vent1) || isNaN(parse_vent2) || isNaN(parse_vent3)){
         alert("Rellene todos los campos (introduce cero si no hubo ventas).");
-        return;
-    }
-    
-    if(parse_vent1 < 0 || parse_vent2 < 0 || parse_vent3 < 0){
-        alert("Introduce valores mayores a cero en las ventas.");
-        document.getElementById("venta1").value = "";
-        document.getElementById("venta2").value = "";
-        document.getElementById("venta3").value = "";
         return;
     }
 
