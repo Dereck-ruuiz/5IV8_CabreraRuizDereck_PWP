@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problema 1</title>
+    <link rel="stylesheet" href="./css/stylealgp1.css">
 </head>
 <body>
-    
     
     <div class="container">
         <div class="problema-container">
             <h2 class="problema-title">Problema 1</h2>
             <h3>Dada una lista de palabras separadas por un espacio, invierte el orden de dichas palabras. Las palabras pueden estar separadas unicamente por espacios</h3>
             <div class="porblema-content">
-                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por un espacio:" id="p1-input">
-                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="">Invertir Palabras</button>
+                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por un espacio" id="p1-input">
+                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="invertirPalabras()">Invertir Palabras</button>
                 <pre class="problema-output" id="p1-output">Esperando datos...</pre>
+                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="borrarc()">Borrar contenido</button>
             </div>
         </div>
     </div>
 
-    <footer><a href="../../06 Algoritmia/algoritmia.html">regersar a la lista de los ejercicios</a></footer>
+    <div class="container-footer">
+        <footer><a href="../../06 Algoritmia/algoritmia.html">regersar a la lista de los ejercicios</a></footer>
+    </div>
+    <script src="./javascript/funcionesp1.js"></script>
 </body>
 </html>
