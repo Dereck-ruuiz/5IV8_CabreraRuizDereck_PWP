@@ -65,7 +65,9 @@ footer, footer a{
 .container-footer{
     box-shadow: 5px 5px 10px #00000080;
     width: 200px;
-    margin: 3rem auto 3rem auto;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     padding: 10px;
     background-color: #000000;
@@ -78,6 +80,9 @@ footer, footer a{
 }
 .container-footer a:hover{
     transition: all 0.3s ease;
-    font-size: 21px;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    padding: 2.5px;
     padding-bottom: 3px;
 }  
