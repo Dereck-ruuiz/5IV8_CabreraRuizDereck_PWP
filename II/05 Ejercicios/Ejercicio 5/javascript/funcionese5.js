@@ -24,8 +24,8 @@ function calcularAlumnos(){
     var prc_wmen = parse_wmen*100/total
     
     document.getElementById("porcentajesa").value =
-    "Cantidad de mujeres: " + prc_wmen.toFixed(2) + "%" +
-    "\nCantidad de hombres: " + prc_men.toFixed(2) + "%";
+    "Porcentaje de mujeres: " + prc_wmen.toFixed(2) + "%" +
+    "\nPorcentaje de hombres: " + prc_men.toFixed(2) + "%";
 }
 
 function borrarc(){

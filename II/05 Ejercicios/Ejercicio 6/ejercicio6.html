@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="./css/styleejercicio6.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="container-form">
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para calcular su edad</label>
+                <div class="container-table">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                Ingrese su fecha de nacimiento
+                            </td>
+                            <td>
+                                <input type="date" name="fecha" id="fechan" onkeypress="return validarn(event)">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular edad" name="boton" onclick="calcularedad()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Su edad, según la fecha de nacimiento ingresada es:
+                            </td>
+                            <td>
+                                <input type="text" name="" id="cedad" readonly="readonly" class="output">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="button" value="Borrar datos" name="borrar" onclick="borrarc()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+        
+    <div class="container-footer">
+        <footer><a href="../../05 Ejercicios/Ejercicios.html">regersar a la lista de los ejercicios</a></footer>
+    </div>
 
-    
-    <footer><a href="../../05 Ejercicios/Ejercicios.html">regersar a la lista de los ejercicios</a></footer>
+    <script src="./javascript/funcionese6.js"></script>
 </body>
 </html>
