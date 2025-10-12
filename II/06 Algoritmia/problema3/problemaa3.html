@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problema 1</title>
-</head>
+    <link rel="stylesheet" href="./css/stylealgp3.css">
+</head> 
 <body>
     <div class="container">
         <div class="problema-container">
             <h2 class="problema-title">Problema 1</h2>
             <h3>Dada una lista de palabras, encontrar la palabra que más número de caracteres únicos tenga
                 <br>
-            Por Ejemplo: CASA = 3 (c,a,s), PERRO = 4 (p, e, r, o)
-            <br>
-            Considera solamente el abecedario A-Z, en mayúsculas, Las palabras ingresadas deben estar separadas por una coma, ne se aceptan espacios
+            Considera solamente el abecedario A-Z, en mayúsculas, Las palabras ingresadas deben estar separadas por una coma, no se aceptan espacios
             </h3>
             <div class="porblema-content">
-                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por una coma" id="p3-input">
-                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="">Calcular Palabras</button>
-                <pre class="problema-output" id="p1-output">Esperando datos...</pre>
+                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por una coma" id="p3-input" onkeypress="return validarMayusculas(event)">
+                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="calcularPalabras()">Calcular Palabras</button>
+                <pre class="problema-output" id="p3-output">Esperando datos...</pre>
             </div>
         </div>
 
-    <footer><a href="../../06 Algoritmia/algoritmia.html">regersar a la lista de los ejercicios</a></footer>
+
+    <div class="container-footer">
+        <footer><a href="../../06 Algoritmia/algoritmia.html">regersar a la lista de los ejercicios</a></footer>
+    </div>
+    <script src="./javascript/funcionesp3.js"></script>
 </body>
 </html>
