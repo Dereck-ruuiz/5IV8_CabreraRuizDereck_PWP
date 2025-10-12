@@ -58,33 +58,26 @@
 }
 
 
-footer {
-    background-color: black;
+footer, footer a{
+    background-color: #000000;
+}
+
+.container-footer{
+    box-shadow: 5px 5px 10px #00000080;
+    width: 200px;
+    margin: 3rem auto 3rem auto;
     text-align: center;
-    color: white;
-    padding-top: 50px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 80px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: #000000;
 }
 
-footer a {
-    color: white;
+
+.container-footer a{
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 0 15px;
-    transition: color 0.3s;
-    background-color: black;
+    color: white;
 }
-
-footer a:hover {
+.container-footer a:hover{
     transition: all 0.3s ease;
-    color: black;
-    background-color: white;
-    font-size: 20px;
+    font-size: 21px;
     padding-bottom: 3px;
-}
+}  

@@ -33,5 +33,5 @@ function calcularedad(){
 
 function borrarc(){
     document.getElementById("fechan").value = "";
-    document.querySelector("input[readonly]").value = "";
+    document.getElementById("cedad").value = "";
 }
