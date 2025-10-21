@@ -85,9 +85,143 @@ function intercambiarPosicionesRompe(filaPos1, columnaPos1, filaPos2, columnaPos
     rompe[filaPos2, columnaPos2] = pos1;
 }
 
+//Crear una función que se encargue de saber dónde está la pieza vacía
+function actualizarPosicionVacia(nuevaFila, nuevaColumna){
+    filaVacia = nuevaFila;
+    columnaVacia = nuevaColumna;
+}
 
-function iniciar(){
-    //Mezclar las piezas 
-    //Capturar el ultimo movimiento
+//necesitamos también limityar las posiciones del rompecabezas
+function posicionValida(fila, columna){
+    return (fila >= 0 && fila <= 2 && columna >= 0 && columna <= 2)
+}
+
+//Debemos crear una función que se encargue del movimiento detectando el evento de las flechas de navegación.
+
+//Debemos crear una matriz de identificación de mov
+//Arriba 38, abajo 40, izquierda 37, derecha 38
+var codigosDireccion = {
+    IZQUIERDA : 37,
+    ARRIBA : 38,
+    DERECHA : 39,
+    ABAJO : 40
+}; //ES FORMATO JSON
+
+function moverEnDireccion(direccion){
+    var nuevaFilapszVacia;
+    var nuevaColumnapszVacia;
+
+    //saber si se mueve
+    if(direccion === codigosDireccion.ABAJO){
+        nuevaFilapszVacia = filaVacia + 1;
+        nuevaColumnapszVacia = columnaVacia;
+    } else if(direccion === codigosDireccion.ARRIBA){
+        nuevaFilapszVacia = filaVacia - 1;
+        nuevaColumnapszVacia = columnaVacia;
+    }else if(direccion === codigosDireccion.DERECHA){
+        nuevaFilapszVacia = filaVacia;
+        nuevaColumnapszVacia = columnaVacia + 1;
+    }else if(direccion === codigosDireccion.IZQUIERDA){
+        nuevaFilapszVacia = filaVacia;
+        nuevaColumnapszVacia = columnaVacia - 1;
+    }
+
+    //Solo mando a llamar a que la posición sea válida
+    if(posicionValida(nuevaFilapszVacia, nuevaColumnapszVacia)){
+        //Tengo que hacer una función que se encargue de intercambiar las posiciones
+        intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilapszVacia, nuevaColumnapszVacia);
+        actualizarPosicionVacia(nuevaFilapszVacia, nuevaColumnapszVacia);
+        //tengo que guardar el último movimiento
+        agregarUltimoMovimiento(direccion);
+    }
 
 }
+
+function intercambiarPosiciones(fila1, columna1, fila2, columna2){
+    var psz1 = rompe[fila1, columna1];
+    var psz1 = rompe[fila2, columna2];
+
+    //Intercambio ya debe de ser por parte de los frames y el html
+    intercambiarPosicionesRompe(fila1, columna1, fila2, columna2);
+    //para el html
+    intercambiarPosicionesDOM('pieza' + psz1, psz2);
+}
+
+function intercambiarPosicionesDOM(idPieza1, idPieza2){
+    var pieza1 = document.getElementById(idPieza1);
+    var pieza2 = document.getElementById(idPieza2);
+
+    //Vamos a clonarlas
+    var padrePieza1 = pieza1.parentNode;
+    var padrePieza2 = pieza2.parentNode;
+
+    //lo clono
+    var clonElemento1 = pieza1.cloneNode(true);
+    var clonElemento2 = pieza2.cloneNode(true);
+
+    //reemplazar a los padres con sus clones
+    padrePieza1.replaceChild(clonElemento1, pieza1);
+    padrePieza2.replaceChild(clonElemento2, pieza2);
+}
+
+//Debo de actualizar los elementos en el DOM
+function agregarUltimoMovimiento(direccion){
+    var ultimoMovimiento = document.getElementById("flecha");
+    switch(direccion){
+        case codigosDireccion.ARRIBA:
+            ultimoMovimiento.textContent = "↑";
+            break;
+        case codigosDireccion.ABAJO:
+            ultimoMovimiento.textContent = "↓";
+            break;
+        case codigosDireccion.DERECHA:
+            ultimoMovimiento.textContent = "→";
+            break;
+        case codigosDireccion.IZQUIERDA:
+            ultimoMovimiento.textContent = "←";
+            break;
+    }
+}
+
+function mezclarPiezas(veces){
+    if(veces <= 0){
+        alert("Así no se puede");
+        return;
+    }
+
+    var direcciones = [codigosDireccion.ABAJO, codigosDireccion.ARRIBA, codigosDireccion.DERECHA, codigosDireccion.IZQUIERDA];
+    var direccion = direcciones[Math.floor(Math.random() * direcciones.length)];
+    moverEnDireccion(direccion);
+
+    setTimeout(function(){
+        mezclarPiezas(veces - 1);
+    }, 100);
+}
+
+//Necesitamos saber qué teclas se están oprimiendo
+function capturarTeclas(){
+    document.body.onkeydown = (function(evento){
+        if(evento.which === codigosDireccion.ARRIBA ||
+                         evento.which === codigosDireccion.ABAJO ||
+                         evento.which === codigosDireccion.DERECHA ||
+                         evento.which === codigosDireccion.IZQUIERDA){
+            moverEnDireccion(evento.which);
+            //saber si gane
+            var gano = checarSiGano();
+            if(gano){
+                setTimeout(function(){
+                    mostrarCartelGanador();
+                }, 500);
+            }
+            evento.preventDefault();
+        }
+    });
+}
+
+
+function iniciar(){
+    mezclarPiezas(30);
+    capturarTeclas();
+}
+
+iniciar();
