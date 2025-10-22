@@ -51,7 +51,7 @@ mostrarInstrucciones(instrucciones);
 //Vamos a crear una función para saber que ganó
 function checarSiGano(){
     for(var i = 0; i < rompe.length; i++){
-        for(var j = 0; j < rompe.length; j++){
+        for(var j = 0; j < rompe[i].length; j++){
             var rompeActual = rompe[i][j];
             if(rompeActual !== rompeCorrecta[i][j]){
                 return false;
@@ -66,7 +66,6 @@ function mostrarCartelGanador(){
     if(checarSiGano()){
         alert("Felicidades, Ganaste");
     }
-    return false;
 }
 
 /*
@@ -77,12 +76,9 @@ function mostrarCartelGanador(){
     posicion[][] = arreglo[][]
 */
 function intercambiarPosicionesRompe(filaPos1, columnaPos1, filaPos2, columnaPos2){
-    var pos1 = rompe[filaPos1, columnaPos1];
-    var pos2 = rompe[filaPos2, columnaPos2];
-
-    //Intercambio
-    rompe[filaPos1, columnaPos1] = pos2;
-    rompe[filaPos2, columnaPos2] = pos1;
+    var temp = rompe[filaPos1][columnaPos1];
+    rompe[filaPos1][columnaPos1] = rompe[filaPos2][columnaPos2];
+    rompe[filaPos2][columnaPos2] = temp;
 }
 
 //Crear una función que se encargue de saber dónde está la pieza vacía
@@ -138,30 +134,28 @@ function moverEnDireccion(direccion){
 }
 
 function intercambiarPosiciones(fila1, columna1, fila2, columna2){
-    var psz1 = rompe[fila1, columna1];
-    var psz1 = rompe[fila2, columna2];
+    var psz1 = rompe[fila1][columna1];
+    var psz2 = rompe[fila2][columna2];
 
     //Intercambio ya debe de ser por parte de los frames y el html
     intercambiarPosicionesRompe(fila1, columna1, fila2, columna2);
     //para el html
-    intercambiarPosicionesDOM('pieza' + psz1, psz2);
+    intercambiarPosicionesDOM('pieza' + psz1, 'pieza' + psz2);
 }
 
 function intercambiarPosicionesDOM(idPieza1, idPieza2){
     var pieza1 = document.getElementById(idPieza1);
     var pieza2 = document.getElementById(idPieza2);
 
-    //Vamos a clonarlas
+    //vamos a clonarlas
     var padrePieza1 = pieza1.parentNode;
     var padrePieza2 = pieza2.parentNode;
 
-    //lo clono
-    var clonElemento1 = pieza1.cloneNode(true);
-    var clonElemento2 = pieza2.cloneNode(true);
+    var clon1 = pieza1.cloneNode(true);
+    var clon2 = pieza2.cloneNode(true);
 
-    //reemplazar a los padres con sus clones
-    padrePieza1.replaceChild(clonElemento1, pieza1);
-    padrePieza2.replaceChild(clonElemento2, pieza2);
+    padrePieza1.replaceChild(clon2, pieza1);
+    padrePieza2.replaceChild(clon1, pieza2);
 }
 
 //Debo de actualizar los elementos en el DOM
@@ -195,7 +189,7 @@ function mezclarPiezas(veces){
 
     setTimeout(function(){
         mezclarPiezas(veces - 1);
-    }, 100);
+    }, 50);
 }
 
 //Necesitamos saber qué teclas se están oprimiendo

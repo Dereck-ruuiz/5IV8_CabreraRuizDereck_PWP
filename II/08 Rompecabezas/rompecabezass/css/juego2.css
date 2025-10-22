@@ -5,7 +5,8 @@ body {
     width: 940px;
     margin: 2% auto;
     min-height: 100%;
-    background-image: url(../img/adventure.jpg);
+    background-image: url(../img/pokemon.jpg);
+    background-size: cover;
     box-sizing: border-box;
 }
 
@@ -177,3 +178,32 @@ li::before {
     background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
     text-decoration: none;
 }
+
+footer, footer a{
+    background-color: #000000;
+}
+
+.container-footer{
+    box-shadow: 5px 5px 10px #00000080;
+    width: 200px;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+}
+
+
+.container-footer a{
+    text-decoration: none;
+    color: white;
+}
+.container-footer a:hover{
+    transition: all 0.3s ease;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    padding: 2.5px;
+    padding-bottom: 3px;
+}  
